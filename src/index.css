@@ -1,0 +1,299 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+}
+
+/* this is the whole chat box design */
+#chat-box {
+    box-sizing: border-box;
+    position: absolute;
+    width: 90vw;
+    height: 43.5vw;
+    margin-left: 5vw;
+    margin-top: 2.4vw;
+    background: url(../images/bg-image.jpg), rgba(129, 186, 255, 0.09);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 2.24979px 2.99972px 23.9978px rgba(0, 0, 0, 0.54);
+    backdrop-filter: blur(23.9978px);
+    border-radius: 14.9986px;
+}
+
+/* the header of the chat box */
+.chat-header-app {
+    width: 100%;
+    height: 3.5vw;
+    border-bottom: 1px solid #469D8B;
+}
+
+/* the icon on the left of the header */
+.chat-header-app .bi-chevron-left {
+    position: absolute;
+    margin-left: -11vw;
+    font-size: 2.5vw;
+    color: white;
+    margin-left: 1vw;
+    margin-top: 1vw;
+    background-color: #469D8B;
+    border-radius: 10px;
+    width: 1.5vw;
+    height: 1.5vw;
+    padding: 0.2vw;
+}
+
+/* the messages link */
+.chat-header-app a {
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    background-color: #469D8B;
+    border-radius: 10px;
+    padding: 0.2vw;
+    margin-top: 0.7vw;
+    margin-left: 66vw;
+    text-align: center;
+    padding: 0.4vw;
+    width: 7vw;
+    font-weight: 700;
+}
+
+/* participants */
+.chat-header-app p {
+    position: absolute;
+    margin-top: 1.2vw;
+    margin-left: 76vw;
+    color: white;
+    font-weight: 700;
+}
+
+/* people icon on the right */
+.chat-header-app .bi-people-fill {
+    position: absolute;
+    text-align: center;
+    margin-top: 0.8vw;
+    margin-left: 82.5vw;
+    background-color: #469D8B;
+    border-radius: 10px;
+    width: 4vw;
+    height: 2vw;
+    padding: 0.4vw;
+    color: white;
+}
+
+/* the main of the chat box */
+.chat-main-app {
+    width: 96%;
+    height: calc(100% - 100px);
+    overflow: auto;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* message box */
+.chat-main-app .message {
+    display: flex;
+    padding: 10px;
+}
+
+/* textbox */
+.chat-main-app .message > div {
+    max-width: 100%;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* our message box on the right */
+.chat-main-app .message .my-message {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* our profile img */
+.chat-main-app .my-message img {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    margin-top: 0.5vw;
+    margin: 1vw;
+}
+
+/* their message box on the left */
+.chat-main-app .message .other-message {
+    justify-content: flex-start;
+}
+
+/* their image */
+.chat-main-app .other-message img {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    margin-top: 0.5vw;
+    margin: 1vw;
+}
+
+.chat-main-app .message .text {
+    word-wrap: break-word;
+}
+
+.update {
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* message box */
+.chat-footer-app {
+    position: absolute;
+    width: 82vw;
+    height: 3vw;
+    left: 2.6vw;
+    top: 39.5vw;
+    background: #469D8B;
+    box-shadow: 0px 10.499px 20.9981px rgba(0, 0, 0, 0.25);
+    border-radius: 5.99944px;
+}
+
+/* the input of the message box */
+.chat-footer-app input {
+    width: 71vw;
+    height: 2.5vw;
+    margin-left: 1vw;
+    margin-top: 0.2vw;
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 0.8vw;
+    opacity: 0.7;
+    font-size: 0.9vw;
+}
+
+/* placeholder */
+.chat-footer-app input::placeholder {
+    color: white;
+}
+
+/* footer icons on the left */
+.chat-footer-app a {
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5vw;
+    margin-left: 1vw;
+    margin-top: 0.5vw;
+}
+
+/* footer chatbox button on the right */
+.chat-footer-app button {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-weight: 500;
+    margin-left: -1em;
+}
+
+/* sidebox */
+aside {
+    position: absolute;
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+}
+
+/* chatbox logo */
+aside img {
+    width: 3vw;
+    height: 3.5vw;
+    padding: 0.8vw;
+    margin-top: 2.5vw;
+}
+
+/* icon sidebar */
+aside .bi-bell-fill {
+    position: absolute;
+    margin-top: 0.5vw;
+    margin-left: -2vw;
+    font-size: 1.5vw;
+    margin-top: 10vw;
+    width: 1.3vw;
+    height: 1.3vw;
+    color: black;
+}
+
+/* icon sidebar */
+aside .bi-person-fill {
+    position: absolute;
+    margin-top: 0.5vw;
+    margin-left: -2vw;
+    font-size: 1.5vw;
+    margin-top: 13vw;
+    width: 1.3vw;
+    height: 1.3vw;
+    color: black;
+}
+
+/* icon sidebar */
+aside .bi-camera-video-fill {
+    position: absolute;
+    margin-top: 0.5vw;
+    margin-left: -2vw;
+    font-size: 1.5vw;
+    margin-top: 16vw;
+    width: 1.5vw;
+    height: 1.5vw;
+    color: black;
+    background: #469D8B;
+    border-radius: 50%;
+    padding: 0.2vw;
+}
+
+/* icon sidebar */
+aside .bi-house-door-fill {
+    position: absolute;
+    margin-top: 0.5vw;
+    margin-left: -2vw;
+    font-size: 1.5vw;
+    margin-top: 19vw;
+    width: 1.3vw;
+    height: 1.3vw;
+    color: black;
+}
+
+/* BELOW HERE ARE THE ID STYLES OF THE PAGE */
+
+#message-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#message-list li {
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
