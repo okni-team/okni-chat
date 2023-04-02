@@ -90,8 +90,8 @@ body {
 
 /* the main of the chat box */
 .chat-main-app {
-    width: 96%;
-    height: calc(100% - 100px);
+    width: 97%;
+    height: calc(100% - 70px);
     overflow: auto;
     padding: 2vw;
     display: flex;
@@ -278,8 +278,6 @@ aside .bi-house-door-fill {
     color: black;
 }
 
-/* BELOW HERE ARE THE ID STYLES OF THE PAGE */
-
 #message-list {
     list-style: none;
     padding: 0;
@@ -291,9 +289,144 @@ aside .bi-house-door-fill {
     border-radius: 5px;
 }
 
-#message-input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 5px;
+/* Sidebar styles */
+.sidebar {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+}
+
+.sidebar .btn-primary {
+    background-color: #469D8B;
     border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 70px;
+    width: 94%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0px 10.499px 20.9981px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar input {
+    margin: 10px;
+    width: 94%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 10px;
+    font-size: 13px;
+    background-color: #469D8B;
+    box-shadow: 0px 10.499px 20.9981px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar input::placeholder {
+    color: white;
+}
+  
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+  
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    font-size: 30px;
+    background: none;
+}
+  
+.openbtn:hover {
+    background-color: #444;
+}
+  
+#main {
+    transition: margin-right .5s;
+}
+  
+  /* Collapse sidebar when button is clicked */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+.requests {
+    margin: 10px;
+}
+
+.requests button {
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 70px;
+    width: 98%;
+    box-shadow: 0px 10.499px 20.9981px rgba(0, 0, 0, 0.25);
+}
+
+#friend-request {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #d6cfcd6e;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#chat-list {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #d6cfcd6e;
+    width: 94%;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#chat-list-info {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-list-info #name {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+#chat-list-info #text-message {
+    font-size: 15px;
+    color: white;
+    margin-left: 5px;
+}
+
+.chats #chat-list img {
+    width: 50px;
+    border-radius: 50%;
 }
