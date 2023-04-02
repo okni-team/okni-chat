@@ -1,22 +1,24 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
 }
 
-.chat-app-container {
+/* this is the whole chat box design */
+#chat-box {
     box-sizing: border-box;
     position: absolute;
     width: 90vw;
     height: 43.5vw;
     margin-left: 5vw;
     margin-top: 2.4vw;
-    background: url(bg-image.jpg), rgba(129, 186, 255, 0.09);
+    background: url(../images/bg-image.jpg), rgba(129, 186, 255, 0.09);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -25,13 +27,15 @@ body {
     border-radius: 14.9986px;
 }
 
-.chat-app-container .chat-header-app {
+/* the header of the chat box */
+.chat-header-app {
     width: 100%;
     height: 3.5vw;
     border-bottom: 1px solid #469D8B;
 }
 
-.chat-app-container .chat-header-app .bi-chevron-left {
+/* the icon on the left of the header */
+.chat-header-app .bi-chevron-left {
     position: absolute;
     margin-left: -11vw;
     font-size: 2.5vw;
@@ -45,7 +49,8 @@ body {
     padding: 0.2vw;
 }
 
-.chat-app-container .chat-header-app a {
+/* the messages link */
+.chat-header-app a {
     position: absolute;
     text-decoration: none;
     color: white;
@@ -60,7 +65,8 @@ body {
     font-weight: 700;
 }
 
-.chat-app-container .chat-header-app p {
+/* participants */
+.chat-header-app p {
     position: absolute;
     margin-top: 1.2vw;
     margin-left: 76vw;
@@ -68,7 +74,8 @@ body {
     font-weight: 700;
 }
 
-.chat-app-container .chat-header-app .bi-people-fill {
+/* people icon on the right */
+.chat-header-app .bi-people-fill {
     position: absolute;
     text-align: center;
     margin-top: 0.8vw;
@@ -81,32 +88,41 @@ body {
     color: white;
 }
 
-.messages {
-    width: 97%;
+/* the main of the chat box */
+.chat-main-app {
+    width: 96%;
     height: calc(100% - 100px);
-    overflow-y: auto;
-    padding: 40px;
-    justify-content: center;
-    align-items: center;
+    overflow: auto;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
-.messages .message {
+/* message box */
+.chat-main-app .message {
     display: flex;
     padding: 10px;
 }
 
-.messages .message > div {
-    max-width: 80%;
+/* textbox */
+.chat-main-app .message > div {
+    max-width: 100%;
     box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.05);
     padding: 10px;
     border-radius: 10px;
 }
 
-.messages .message.my-message {
+/* our message box on the right */
+.chat-main-app .message .my-message {
+    flex-direction: column;
     justify-content: flex-end;
+    align-items: flex-end;
 }
 
-.messages .my-message img {
+/* our profile img */
+.chat-main-app .my-message img {
     width: 3vw;
     height: 3vw;
     border-radius: 50%;
@@ -114,11 +130,13 @@ body {
     margin: 1vw;
 }
 
-.messages .message.other-message {
+/* their message box on the left */
+.chat-main-app .message .other-message {
     justify-content: flex-start;
 }
 
-.messages .other-message img {
+/* their image */
+.chat-main-app .other-message img {
     width: 3vw;
     height: 3vw;
     border-radius: 50%;
@@ -126,19 +144,11 @@ body {
     margin: 1vw;
 }
 
-.messages .message .name {
-    font-size: 0.8rem;
-    color: black;
-    /* margin-bottom: 5px; */
-    margin-left: 4px;
-    padding: 5px;
-}
-
-.messages .message .text {
+.chat-main-app .message .text {
     word-wrap: break-word;
 }
 
-.messages .update {
+.update {
     text-align: center;
     padding: 10px;
     color: white;
@@ -146,7 +156,8 @@ body {
     font-style: italic;
 }
 
-.typebox {
+/* message box */
+.chat-footer-app {
     position: absolute;
     width: 82vw;
     height: 3vw;
@@ -157,7 +168,8 @@ body {
     border-radius: 5.99944px;
 }
 
-.typebox input {
+/* the input of the message box */
+.chat-footer-app input {
     width: 71vw;
     height: 2.5vw;
     margin-left: 1vw;
@@ -171,19 +183,24 @@ body {
     font-size: 0.9vw;
 }
 
-.typebox input::placeholder {
+/* placeholder */
+.chat-footer-app input::placeholder {
     color: white;
 }
 
-.typebox a {
+/* footer icons on the left */
+.chat-footer-app a {
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     color: white;
     font-size: 1.5vw;
     margin-left: 1vw;
-    margin-top: 0.2vw;
+    margin-top: 0.5vw;
 }
 
-.typebox button {
+/* footer chatbox button on the right */
+.chat-footer-app button {
     border: none;
     background: none;
     outline: none;
@@ -192,6 +209,7 @@ body {
     margin-left: -1em;
 }
 
+/* sidebox */
 aside {
     position: absolute;
     width: 5%;
@@ -201,6 +219,7 @@ aside {
     z-index: 999;
 }
 
+/* chatbox logo */
 aside img {
     width: 3vw;
     height: 3.5vw;
@@ -208,6 +227,7 @@ aside img {
     margin-top: 2.5vw;
 }
 
+/* icon sidebar */
 aside .bi-bell-fill {
     position: absolute;
     margin-top: 0.5vw;
@@ -219,6 +239,7 @@ aside .bi-bell-fill {
     color: black;
 }
 
+/* icon sidebar */
 aside .bi-person-fill {
     position: absolute;
     margin-top: 0.5vw;
@@ -230,6 +251,7 @@ aside .bi-person-fill {
     color: black;
 }
 
+/* icon sidebar */
 aside .bi-camera-video-fill {
     position: absolute;
     margin-top: 0.5vw;
@@ -244,6 +266,7 @@ aside .bi-camera-video-fill {
     padding: 0.2vw;
 }
 
+/* icon sidebar */
 aside .bi-house-door-fill {
     position: absolute;
     margin-top: 0.5vw;
@@ -253,4 +276,24 @@ aside .bi-house-door-fill {
     width: 1.3vw;
     height: 1.3vw;
     color: black;
+}
+
+/* BELOW HERE ARE THE ID STYLES OF THE PAGE */
+
+#message-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#message-list li {
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
 }
